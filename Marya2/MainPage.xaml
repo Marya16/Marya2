@@ -41,7 +41,7 @@
        <ColumnDefinition Width="*"/>
      </Grid.ColumnDefinitions> 
 
-  <Label Text="32°C"
+  <Label x:Name="Labeltemp"
          TextColor="White"
          Grid.Row="0"
          Margin="3,8"
@@ -50,7 +50,7 @@
          HorizontalTextAlignment="Center"
          FontFamily="Bold"/>
 
-  <Label Text="Ensolarado"
+  <Label x:Name="Labeldescription"
          Grid.Row="1"
          Grid.Column="0"
          TextColor="White"
@@ -58,7 +58,7 @@
          HorizontalTextAlignment="Center"
          FontFamily="Bold"/>
 
- <Label Text="Apucarana, PR"
+ <Label x:Name="Labelcity"
         Grid.Row="2"
         Grid.Column="0"
         TextColor="White"
@@ -84,7 +84,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="*"/>
+       <ColumnDefinition Width="20"/>
       </Grid.ColumnDefinitions> 
 
    <Label Text="CLIMA"
@@ -95,12 +95,19 @@
           HorizontalTextAlignment="Center"
           FontSize="14"/>
           
-    <Label Text="Chuva:    0%"
+    <Label Text="Chuva:"
           Grid.Row="1"
           Grid.Column="0"
           TextColor="White"
           Margin="3,8"
           FontSize="14"/>
+
+        <Label x:Name="Labelrain"
+           Grid.Row="2"
+           Grid.Column="1"
+           TextColor="White"
+           HorizontalTextAlignment="Center"
+           FontSize="15"/>
 
     <Label Text="Humidade:"
            Grid.Row="2"
@@ -108,6 +115,14 @@
            TextColor="White"
            Margin="3,8"
            FontSize="14"/>
+
+    <Label x:Name="Labelhumidity"
+           Grid.Row="2"
+           Grid.Column="1"
+           TextColor="White"
+           HorizontalTextAlignment="Center"
+           FontSize="15"/>
+
     </Grid>
     </Frame>
       
@@ -127,7 +142,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="*"/>
+       <ColumnDefinition Width="40"/>
       </Grid.ColumnDefinitions>   
 
      <Label Text="SOL"
@@ -137,19 +152,34 @@
             HorizontalTextAlignment="Center"
             FontSize="15"/>  
 
-      <Label Text="Amanhecer: 88"
+      <Label Text="Amanhecer:"
              Grid.Row="1"
              Grid.Column="0"
              TextColor="White"
              Margin="4,8"
              FontSize="13"/>  
 
-      <Label Text="Anoitecer: 77"
+      <Label x:Name="Labelsunrise"
+             Grid.Row="1"
+             Grid.Column="1"
+             TextColor="White"
+             HorizontalTextAlignment="Center"
+             FontSize="15"/>  
+      
+      <Label Text="Anoitecer:"
              Grid.Row="2"
              Grid.Column="0"
              TextColor="White"
              Margin="4,8"
-             FontSize="13"/>         
+             FontSize="13"/> 
+
+      <Label x:Name="Labelsunset"
+             Grid.Row="2"
+             Grid.Column="1"
+             TextColor="White"
+             HorizontalTextAlignment="Center"
+             FontSize="15"/>
+
      </Grid>
      </Frame>
 
@@ -169,7 +199,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="*"/>
+       <ColumnDefinition Width="40"/>
       </Grid.ColumnDefinitions>        
  
    <Label Text="VENTO"
@@ -186,14 +216,29 @@
              Grid.Column="0"
              TextColor="White"
              Margin="4,8"
-             FontSize="13"/>  
+             FontSize="13"/> 
+
+    <Label x:Name="Labelwind_speedy"          
+           Grid.Row="1"
+           Grid.Column="1"
+           TextColor="White"
+           HorizontalTextAlignment="Center"
+           FontSize="15"/>
 
     <Label Text="Direção:"
-             Grid.Row="2"
-             Grid.Column="0"
-             TextColor="White"
-             Margin="4,8"
-             FontSize="13"/>       
+           Grid.Row="2"
+           Grid.Column="0"
+           TextColor="White"
+           Margin="4,8"
+           FontSize="13"/>   
+
+    <Label x:Name="Labelwind_direction"
+           Grid.Row="2"
+           Grid.Column="1"
+           TextColor="White"
+           HorizontalTextAlignment="Center"
+           FontSize="15"/> 
+
     </Grid>
     </Frame>
 
@@ -213,7 +258,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="*"/>
+       <ColumnDefinition Width="40"/>
       </Grid.ColumnDefinitions>        
  
    <Label Text="LUA"
@@ -232,8 +277,25 @@
              Margin="4,8"
              FontSize="13"/>  
 
-        
+    <Label x:Name="Labelmoon_phase"
+           Grid.Row="2"
+           Grid.Column="1"
+           TextColor="White"
+           HorizontalTextAlignment="Center"
+           FontSize="15"/>   
+
     </Grid>
+    </Frame>
+
+    <Frame x:Name="framegrande"
+    CornerRadius="20"
+    Padding="0"
+    Margin="10"
+    BorderColor="White"
+    BackgroundColor="#55000000"
+    Grid.Row="4"
+    Grid.Column="0"
+    Grid.ColumnSpan="3">
     </Frame>
    </Grid>
 </ContentPage>

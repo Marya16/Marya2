@@ -1,11 +1,9 @@
-using System.Dynamic;
-
 namespace Marya2;
 
-public class results 
+public class Results 
 {
     public int temp {get;set;}
-    public string discription {get;set;}
+    public string description {get;set;}
     public string city {get;set;}
     public double rain {get;set;}
     public int humidity {get;set;}
