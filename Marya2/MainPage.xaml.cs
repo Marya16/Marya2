@@ -1,50 +1,52 @@
-﻿using System.Reflection.Emit;
+﻿
+using System.Text.Json;
+
 
 namespace Marya2;
 
 public partial class MainPage : ContentPage
 {
 	Results Resultado;
+
+	const string url ="https://api.hgbrasil.com/weather?woeid=455927&key=1d4672ff";
+	Resposta resposta;
 	public MainPage() 
 	{
-		Resultado = new Results();
 		InitializeComponent();
-		TestandoLayout();
-		PreencherTela();
+		AtualizaTempo();
 	}
-	void TestandoLayout()
-	{
-		Resultado.temp=32;
-		Resultado.city="Apucarana, PR";
-		Resultado.description="Ensolarado";
-		Resultado.rain=1;
-		Resultado.humidity=2;
-		Resultado.sunrise="5:40 am";
-		Resultado.sunset="18:50 pm";
-		Resultado.wind_speedy="3.99 kmh";
-		Resultado.wind_direction=30;
-		Resultado.moon_phase="Nova";
-		Resultado.currently="Dia";
-		Resultado.codition_code="25";
-		Resultado.img_id="26";
-		Resultado.cloudiness=14;
-		Resultado.wind_cardinal="S";
 	
+	async void AtualizaTempo()
+	{
+	   try
+	  {
+      var navegador = new HttpClient();
+	  var response = await navegador.GetAsync (url);
+	  if (response.IsSuccessStatusCode)
+	  {
+		var content = await response.Content.ReadAsStringAsync();
+		resposta = JsonSerializer.Deserialize<Resposta>(content);
+	  }
+	    PreencherTela();
+	  }	 
+		catch(Exception e)
+      { 
+
+	  }
 	}
+	
 	void PreencherTela()
 	{
-		Labeltemp.Text = Resultado.temp. ToString();
-		Labelcity.Text = Resultado.city;
-		Labeldescription.Text = Resultado.description;
-		Labelrain.Text = Resultado.rain.ToString();
-		Labelhumidity.Text = Resultado.humidity.ToString();
-		Labelsunrise.Text = Resultado.sunrise;
-		Labelsunset.Text = Resultado.sunset;
-		Labelwind_speedy.Text = Resultado.wind_speedy;
-		Labelwind_direction.Text = Resultado.wind_direction.ToString();
+		Labeltemp.Text = resposta.results.temp.ToString();
+		Labelcity.Text = resposta.results.city;
+		Labeldescription.Text = resposta.results.description;
+		Labelrain.Text = resposta.results.rain.ToString();
+		Labelhumidity.Text = resposta.results.humidity.ToString();
+		Labelsunrise.Text = resposta.results.sunrise;
+		Labelsunset.Text = resposta.results.sunset;
+		Labelwind_speedy.Text = resposta.results.wind_speedy;
+		Labelwind_direction.Text = resposta.results.wind_direction.ToString();
 			
 	}
-
-
 }
 

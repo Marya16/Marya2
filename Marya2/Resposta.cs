@@ -1,7 +1,6 @@
 namespace Marya2;
 
-public partial class MainPage : ContentPage
-{
-
-    
+public class Resposta
+{ 
+    public Results results {get;set;}
 }
