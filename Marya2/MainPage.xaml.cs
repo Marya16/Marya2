@@ -46,7 +46,25 @@ public partial class MainPage : ContentPage
 		Labelsunset.Text = resposta.results.sunset;
 		Labelwind_speedy.Text = resposta.results.wind_speedy;
 		Labelwind_direction.Text = resposta.results.wind_direction.ToString();
-			
+
+		if (resposta.results.currently=="dia")
+		{
+			if (resposta.results.rain > 10)
+				imgfundo.Source="diachuvoso.png";
+			else if (resposta.results.cloudiness > 10)
+				imgfundo.Source="dianublado.png";
+			else
+				imgfundo.Source="dialimpo.png";
+		}	
+		else
+		{
+			if (resposta.results.rain > 10)
+				imgfundo.Source="noitechuvosa.png";
+			else if (resposta.results.cloudiness > 10)
+				imgfundo.Source="noitenublada.png";
+			else
+				imgfundo.Source="noitelimpa.png";
+		}
 	}
 }
 

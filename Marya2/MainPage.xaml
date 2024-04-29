@@ -19,7 +19,8 @@
        <ColumnDefinition Width="*"/>
    </Grid.ColumnDefinitions>
 
-  <Image Source="dialimpo.png"
+  <Image x:Name="imgfundo"
+         Source="dialimpo.png"
          Aspect="AspectFill"
          Grid.RowSpan="5"
          Grid.ColumnSpan="5"/>
@@ -84,7 +85,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="20"/>
+       <ColumnDefinition Width="19"/>
       </Grid.ColumnDefinitions> 
 
    <Label Text="CLIMA"
@@ -95,7 +96,7 @@
           HorizontalTextAlignment="Center"
           FontSize="14"/>
           
-    <Label Text="Chuva:"
+    <Label Text="Chuva: 1"
           Grid.Row="1"
           Grid.Column="0"
           TextColor="White"
@@ -142,7 +143,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="40"/>
+       <ColumnDefinition Width="39"/>
       </Grid.ColumnDefinitions>   
 
      <Label Text="SOL"
@@ -199,7 +200,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="40"/>
+       <ColumnDefinition Width="39"/>
       </Grid.ColumnDefinitions>        
  
    <Label Text="VENTO"
@@ -258,7 +259,7 @@
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
        <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="40"/>
+       <ColumnDefinition Width="39"/>
       </Grid.ColumnDefinitions>        
  
    <Label Text="LUA"
