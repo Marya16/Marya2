@@ -34,7 +34,7 @@ public partial class MainPage : ContentPage
 
 	  }
 	}
-	
+
 	void PreencherTela()
 	{
 		Labeltemp.Text = resposta.results.temp.ToString();
@@ -46,6 +46,20 @@ public partial class MainPage : ContentPage
 		Labelsunset.Text = resposta.results.sunset;
 		Labelwind_speedy.Text = resposta.results.wind_speedy;
 		Labelwind_direction.Text = resposta.results.wind_direction.ToString();
+		Labeldafasedalua.Text= resposta.results.moon_phase;
+
+		if(resposta.results.moon_phase=="full") 
+			Labeldafasedalua.Text = "Cheia";
+		else if(resposta.results.moon_phase=="new")	
+		    Labeldafasedalua.Text = "Nova";
+		else if(resposta.results.moon_phase=="growing")	
+		    Labeldafasedalua.Text = "Crescente";
+		else if(resposta.results.moon_phase=="waning")
+            Labeldafasedalua.Text = "Minguante";
+	  	else if(resposta.results.moon_phase=="waning_gibbous")
+            Labeldafasedalua.Text = "Gibosa Minguante";
+	   else 
+	    Labeldafasedalua.Text = "Gibosa Crescente";
 
 		if (resposta.results.currently=="dia")
 		{

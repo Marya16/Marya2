@@ -258,8 +258,8 @@
        <RowDefinition Height="*"/>
      </Grid.RowDefinitions>
      <Grid.ColumnDefinitions>
-       <ColumnDefinition Width="100"/>
-       <ColumnDefinition Width="39"/>
+       <ColumnDefinition Width="50"/>
+       <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>        
  
    <Label Text="LUA"
@@ -271,14 +271,14 @@
           FontSize="15"/> 
 
         
-    <Label Text="Fase:   Nova"
+    <Label Text="Fase:"
              Grid.Row="1"
              Grid.Column="0"
              TextColor="White"
              Margin="4,8"
              FontSize="13"/>  
 
-    <Label x:Name="Labelmoon_phase"
+    <Label x:Name="Labeldafasedalua"
            Grid.Row="2"
            Grid.Column="1"
            TextColor="White"
